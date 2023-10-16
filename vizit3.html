@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html>
+<head>
+     <link rel="stylesheet" type="text/css" href="styles.css">
+    <meta charset="UTF-8">
+    <title>Моя Магазинная Визитка</title>
+    <style>
+        
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('background-pattern.jpg'); /* Фоновое изображение внизу */
+            background-size: cover;
+            background-repeat: repeat;
+            background-attachment: fixed; /* Фиксированный фон */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .top-panel {
+            background-color: #333;
+            color: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1;
+        }
+
+        .top-panel .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .top-panel .buttons {
+            display: flex;
+        }
+
+        .top-panel .buttons a {
+            color: #fff;
+            margin: 0 20px;
+            text-decoration: none;
+            position: relative;
+            transition: color 0.3s;
+        }
+
+        .top-panel .buttons a::before {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background-color: #fff;
+            transform: scaleX(0);
+            transform-origin: 50%;
+            transition: transform 0.3s;
+        }
+
+        .top-panel .buttons a:hover {
+            color: #007bff;
+        }
+
+        .top-panel .buttons a:hover::before {
+            transform: scaleX(1);
+        }
+
+        .contact-info {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            border-radius: 0 0 10px 10px;
+            transition: all 0.3s;
+        }
+
+        .top-panel .contact-button:hover .contact-info {
+            display: block;
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s;
+            margin: 20px;
+        }
+
+        .container:hover {
+            transform: scale(1.05);
+        }
+
+        h1 {
+            font-size: 36px;
+            color: #333;
+        }
+
+        p {
+            font-size: 18px;
+            color: #777;
+        }
+
+        .button {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 20px;
+            margin: 10px 5px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .button:hover {
+            background-color: #0056b3;
+        }
+
+        .portfolio-card {
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            text-align: center;
+            margin: 20px;
+        }
+
+        .portfolio-card img {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+
+        .table-container {
+            display: flex;
+            justify-content: space-between;
+            margin: 20px;
+        }
+
+        .table {
+            flex: 1;
+            background-color: transparent; /* Прозрачный фон */
+            transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
+            margin-right: 10px;
+        }
+
+        .table:hover {
+            transform: scale(1.05); /* Воздушный эффект */
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+            background-color: #007bff; /* Цвет подсветки */
+        }
+
+        .row {
+            display: table-row;
+        }
+
+        .cell {
+            display: table-cell;
+            text-align: center;
+            padding: 20px;
+            border: 1px solid transparent; /* Невидимая рамка */
+        }
+
+        .footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        .footer .contact-details {
+            float: right;
+            margin-right: 20px;
+        }
+
+        .footer .services {
+            font-weight: bold;
+        }
+
+        .whatsapp-button {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 18px;
+            border-radius: 5px;
+            margin-top: 10px;
+            /* начал срипта для блоков */
+  
+  .container {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .block {
+    width: 30%;
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
+    border: 2px solid transparent;
+    transition: border-color 0.3s, background-color 0.3s;
+    
+  }
+
+  .block:hover {
+    border-color: blue;
+    background-color: lightblue;
+  }
+
+  /* Добавляем максимальную ширину для изображений внутри блока */
+  .block img {
+    max-width: 10%;
+    height: auto;
+            /* конец срипта для блоков */
+
+            table {
+    border-collapse: collapse;
+    width: 10%;
+    max-width: 200px; /* Максимальная ширина таблицы */
+    min-width: 1500px; /* Минимальная ширина таблицы (примерная) */
+
+   
+  }
+   .container {
+    display: inline-block; /* Делаем блоки внутри ячеек строчными элементами */
+    vertical-align: top; /* Выравниваем по верхнему краю */
+  }
+
+  .block {
+    text-align: center; /* Выравниваем содержимое по центру */
+  }
+
+  img {
+    max-width: 100%; /* Масштабируем изображения внутри блоков */
+  }
+  }
+
+  tr {
+    border: none;
+  }
+
+  td {
+    border: none;
+    padding: 8px;
+  }
+        }
+
+        #centerLayer {
+     margin-left: 5%; /* Отступ слева */
+     margin-right: 30%; /* Отступ справа */
+     background: #fc0; /* Цвет фона */
+     padding: 10px; /* Поля вокруг текста */
+    }
+
+     /* Медиа-запрос для мобильных устройств */
+        @media (max-width: 768px) {
+            .table {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="top-panel">
+        <div class="logo">Название платформы</div>
+        <div class="buttons">
+            <a href="#">Каталог услуг</a>
+            <a href="#">Где мы находимся</a>
+            <a class="contact-button">Контакты
+                <span class="contact-info">Телефон: +7 123-456-7890<br>Почта: example@example.com<br>Имя: Ваше Имя</span>
+            </a>
+        </div>
+    </div>
+
+    <div class="container">
+        <h1>Название Вашего платформы</h1>
+        <p>Описание платформы</p>
+        <a class="button" href="#">Купить сейчас</a>
+    </div>
+
+    <div class="portfolio-card">
+        <img src="your-photo.jpg" alt="Ваше фото">
+        <h2>Имя и Фамилия</h2>
+        <p>Описание владельца портфолио</p>
+    </div>
+
+<table class="invisible-border">
+        <tr>
+            <td>
+                <div class="image-container">
+                    <div class="image-3d">
+                        <img style="width:250px; "  src="https://kartinki.pics/pics/uploads/posts/2022-09/1662654529_7-kartinkin-net-p-parnie-kotiki-instagram-7.jpg" width="100" height="100" alt="Image 1">
+                    </div>
+                </div>
+            </td>
+            <td>
+                <div class="text-container">
+                    <h3 class="block-title">Название блока 1</h3>
+                    <p class="block-topic">Тема блока 1</p>
+                    <ul class="block-list">
+                        <li><span class="block-list-number">1.</span> Элемент 1</li>
+                        <li><span class="block-list-number">2.</span> Элемент 2</li>
+                        <li><span class="block-list-number">3.</span> Элемент 3</li>
+                    </ul>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="image-container">
+                    <div class="image-3d">
+                        <img style="width:250px; " class="fig" src="https://kartinki.pics/pics/uploads/posts/2022-09/1662654529_7-kartinkin-net-p-parnie-kotiki-instagram-7.jpg" width="10" height="10" alt="Image 2">
+                    </div>
+                </div>
+            </td>
+            <td>
+                <div class="text-container">
+                    <h3 class="block-title">Название блока 2</h3>
+                    <p class="block-topic">Тема блока 2</p>
+                    <ul class="block-list">
+                        <li><span class="block-list-number">1.</span> Элемент 1</li>
+                        <li><span class="block-list-number">2.</span> Элемент 2</li>
+                        <li><span class="block-list-number">3.</span> Элемент 3</li>
+                    </ul>
+                </div>
+            </td>
+        </tr>
+    </table>
+    <div class="container">
+    </div>
+
+
+    <div class="table-container">
+        <div class="table">
+            <div class="row">
+                <div class="cell">
+                    <img src="product1.jpg" alt="Товар 1">
+                    <p>Описание товара 1</p>
+                    <a class="product-link" href="link-to-excel-1.xlsx">Скачать Excel 1</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="table">
+            <div class="row">
+                <div class="cell">
+                    <img src="product2.jpg" alt="Товар 2">
+                    <p>Описание товара 2</p>
+                    <a class="product-link" href="link-to-excel-2.xlsx">Скачать Excel 2</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="table">
+            <div class="row">
+                <div class="cell">
+                    <img src="product3.jpg" alt="Товар 3">
+                    <p>Описание товара 3</p>
+                    <a class="product-link" href="link-to-excel-3.xlsx">Скачать Excel 3</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <table>
+  <tr>
+    <td>
+      <div class="container">
+        <div class="block">
+          <a href="https://kartinki.pics/pics/uploads/posts/2022-09/1662654529_7-kartinkin-net-p-parnie-kotiki-instagram-7.jpg" target="_blank">
+            <img src="https://kartinki.pics/pics/uploads/posts/2022-09/1662654529_7-kartinkin-net-p-parnie-kotiki-instagram-7.jpg" width="200" height="200" alt="Image 1">
+          </a>
+          <p>This</p>
+        </div>
+      </div>
+    </td>
+    <td>
+      <div class="container">
+        <div class="block">
+          <a href="https://animals.pibig.info/uploads/posts/2023-04/1681488290_animals-pibig-info-p-milie-kotiki-vdvoem-zhivotnie-vkontakte-45.jpg" target="_blank">
+            <img src="https://animals.pibig.info/uploads/posts/2023-04/1681488290_animals-pibig-info-p-milie-kotiki-vdvoem-zhivotnie-vkontakte-45.jpg" width="200" height="200" alt="Image 2">
+          </a>
+          <p>is us</p>
+        </div>
+      </div>
+    </td>
+    <td>
+      <div class="container">
+        <div class="block">
+          <a href="https://krasivosti.pro/uploads/posts/2022-08/1660835595_28-krasivosti-pro-p-milie-kotiki-vdvoem-krasivo-foto-33.jpg" target="_blank">
+            <img src="https://krasivosti.pro/uploads/posts/2022-08/1660835595_28-krasivosti-pro-p-milie-kotiki-vdvoem-krasivo-foto-33.jpg" width="100" height="200" alt="Image 3">
+          </a>
+          <p>together</p>
+        </div>
+      </div>
+    </td>
+  </tr>
+</table>
+
+
+  
+  
+
+
+    <div class="footer">
+        <div class="contact-details">
+            <p>ИП: Иван Иванов</p>
+            <p>ИНН: 1234567890</p>
+            <p>ОГРН: 9876543210</p>
+        </div>
+        <div id="centerLeare" align="left" class="services">
+            <p>Услуги</p>
+            <p>Кейсы</p>
+        </div>
+        <a class="whatsapp-button" href="https://api.whatsapp.com/send?phone=1234567890">WhatsApp</a>
+    </div>
+</body>
+</html>
